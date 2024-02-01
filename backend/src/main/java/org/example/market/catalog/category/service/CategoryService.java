@@ -21,6 +21,6 @@ public class CategoryService {
     }
 
     public void saveCategory(CategoryDto dto) {
-        categoryRepository.save(categoryMapper.EntityToDto(dto));
+        categoryRepository.save(categoryMapper.DtoToEntity(dto));
     }
 }

@@ -31,8 +31,8 @@ export default function Filters() {
           <h4>Categories</h4>
           <ul className={styles.categories__list}>
             {categories.map((el) => (
-              <Link href={`/${el.id}`} key={el.id}>
-                {el.name.charAt(0).toUpperCase() + el.name.slice(1)}
+              <Link href={`/${el.name.replace(/&/g, 'and').replace(/[\s]/g, '-')}`} key={el.id} className={styles.link}>
+                <p>{el.name}</p>
               </Link>
             ))}
           </ul>

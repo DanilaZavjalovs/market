@@ -31,3 +31,7 @@
 .categories__list li:hover{
   color: var(--accent);
 }
+
+.link {
+  color: var(--grey)
+}

@@ -10,7 +10,6 @@ import org.example.market.catalog.product.repository.ProductRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -19,8 +18,8 @@ public class ProductService {
     private final ProductMapper productMapper;
     private final CategoryRepository categoryRepository;
 
-    public List<ProductDto> getProductsByCategory(UUID categoryId) {
-        CategoryEntity entity = categoryRepository.findById(categoryId)
+    public List<ProductDto> getProductsByCategory(String categoryName) {
+        CategoryEntity entity = categoryRepository.findByName(categoryName)
                 .orElseThrow();
 
 

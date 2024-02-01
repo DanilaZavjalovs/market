@@ -3,9 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 
 export type Product = {
-  name: string,
   id: string,
-  categoryId: string,
+  name: string,
+  description: string,
+  price: number,
+  categoryId: {
+    categoryName: string,
+    category: string,
+  }
 };
 
 interface ProductsProps {

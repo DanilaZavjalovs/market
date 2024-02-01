@@ -51,8 +51,9 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests((authorize) -> authorize
                         .requestMatchers("api/auth/**").permitAll()
                         .requestMatchers("api/category/**").permitAll()
-                        .requestMatchers("/api/product/**").permitAll()
-                        .anyRequest().authenticated()
+                        .requestMatchers("api/product/**").permitAll()
+                        .requestMatchers("api/product/image/**").permitAll()
+                        .anyRequest().permitAll()
                 )
                 .authenticationProvider(authenticationProvider())
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);

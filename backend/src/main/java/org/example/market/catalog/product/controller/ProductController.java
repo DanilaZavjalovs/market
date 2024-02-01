@@ -19,9 +19,9 @@ public class ProductController {
 
     private final ProductService productService;
 
-    @GetMapping("{categoryId}")
-    public ResponseEntity<List<ProductDto>> getProductsByCategory(@PathVariable UUID categoryId) {
-        return ResponseEntity.ok(productService.getProductsByCategory(categoryId));
+    @GetMapping("{categoryName}")
+    public ResponseEntity<List<ProductDto>> getProductsByCategory(@PathVariable String categoryName) {
+        return ResponseEntity.ok(productService.getProductsByCategory(categoryName));
     }
 
     @PostMapping
