@@ -30,6 +30,7 @@ public class ImageService {
         imageEntity.setFilePath(FOLDER_PATH + file.getOriginalFilename());
         imageEntity.setProductId(productEntity);
 
+        productEntity.addImage(imageEntity);
 
         imageRepository.save(imageEntity);
 
@@ -42,5 +43,9 @@ public class ImageService {
         byte[] image = Files.readAllBytes(new File(entity.getFilePath()).toPath());
 
         return image;
+    }
+
+    public void saveImage(ImageEntity entity) {
+        imageRepository.save(entity);
     }
 }

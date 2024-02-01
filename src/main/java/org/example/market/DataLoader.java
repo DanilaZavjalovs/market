@@ -5,6 +5,11 @@ import org.example.market.catalog.category.dto.CategoryDto;
 import org.example.market.catalog.category.mapper.CategoryMapper;
 import org.example.market.catalog.category.service.CategoryService;
 import org.example.market.catalog.product.dto.ProductDto;
+import org.example.market.catalog.product.entity.ProductEntity;
+import org.example.market.catalog.product.image.entity.ImageEntity;
+import org.example.market.catalog.product.image.repository.ImageRepository;
+import org.example.market.catalog.product.image.service.ImageService;
+import org.example.market.catalog.product.mapper.ProductMapper;
 import org.example.market.catalog.product.service.ProductService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -19,6 +24,8 @@ public class DataLoader implements CommandLineRunner {
     private final CategoryService categoryService;
     private final ProductService productService;
     private final CategoryMapper categoryMapper;
+    private final ProductMapper productMapper;
+    private final ImageRepository imageRepository;
 
     @Override
     public void run(String... args) throws Exception {
@@ -27,8 +34,10 @@ public class DataLoader implements CommandLineRunner {
         }
 
         for (ProductDto dto: productDtos()) {
-            productService.saveProduct(dto);
+           productService.saveProduct(dto);
         }
+
+        imageEntities();
     }
 
     private List<CategoryDto> dtoList() {
@@ -106,5 +115,54 @@ public class DataLoader implements CommandLineRunner {
         productDtos.add(dto6);
 
         return productDtos;
+    }
+
+    private void imageEntities() {
+        List<ProductEntity> productEntities = productService.getAllProducts().stream()
+                .map(productMapper::DtoToEntity).toList();
+
+        ImageEntity entity1 = new ImageEntity();
+        entity1.setName("T-shirt");
+        entity1.setFilePath("/src/main/resources/image/T-Shirt.png");
+        entity1.setProductId(productEntities.get(0));
+        imageRepository.saveAndFlush(entity1);
+        productEntities.get(0).addImage(entity1);
+
+        ImageEntity entity2 = new ImageEntity();
+        entity2.setName("Shoes");
+        entity2.setFilePath("/src/main/resources/image/Shoes.png");
+        entity2.setProductId(productEntities.get(1));
+        imageRepository.saveAndFlush(entity2);
+        productEntities.get(1).addImage(entity2);
+
+        ImageEntity entity3 = new ImageEntity();
+        entity3.setName("Smartphone");
+        entity3.setFilePath("/src/main/resources/image/Smartphone.png");
+        entity3.setProductId(productEntities.get(2));
+        imageRepository.saveAndFlush(entity3);
+        productEntities.get(2).addImage(entity3);
+
+        ImageEntity entity4 = new ImageEntity();
+        entity4.setName("Bed");
+        entity4.setFilePath("/src/main/resources/image/Bed.png");
+        entity4.setProductId(productEntities.get(3));
+        imageRepository.saveAndFlush(entity4);
+        productEntities.get(3).addImage(entity4);
+
+
+        ImageEntity entity5 = new ImageEntity();
+        entity5.setName("Skincare");
+        entity5.setFilePath("/src/main/resources/image/Skincare.png");
+        entity5.setProductId(productEntities.get(4));
+        imageRepository.saveAndFlush(entity5);
+        productEntities.get(4).addImage(entity5);
+
+
+        ImageEntity entity6 = new ImageEntity();
+        entity6.setName("Backpack");
+        entity6.setFilePath("/src/main/resources/image/Backpack.png");
+        entity6.setProductId(productEntities.get(5));
+        imageRepository.saveAndFlush(entity6);
+        productEntities.get(5).addImage(entity6);
     }
 }
