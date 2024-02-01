@@ -1,0 +1,155 @@
+/*!**********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./components/product/products.module.css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************/
+.products_products__Eexue {
+  display: grid;
+}
+
+.products_product__IWr_O {
+  background-color: var(--light);
+  width: 240px;
+  height: 350px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.products_img__9zjYP {
+  object-fit: contain;
+  border-radius: 15px 15px 0px 0px;
+}
+
+.products_text__5x3e9 {
+  padding: 15px;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  height: 130px;
+  padding-bottom: 0;
+}
+
+.products_bottom__tqfZT {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.products_buttons__7i9nt {
+  display: flex;
+  justify-content: space-between;
+}
+
+.products_buy__DKdD3 {
+  background-color: var(--accent);
+  height: 35px;
+  width: 150px;
+  border-radius: 20px;
+  font-weight: 500;
+  color: var(--light);
+}
+
+/*!*********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./components/filters/filters.module.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************/
+.filters_aside__MnSXF {
+  background-color: var(--light);
+  max-width: 350px;
+  width: 100%;
+  height: 1200px;
+  border-radius: 15px;
+}
+
+.filters_content__3cKcy {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.filters_categories__list__WuRPA {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.filters_categories__list__WuRPA li{
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--grey);
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.filters_categories__list__WuRPA li:hover{
+  color: var(--accent);
+}
+/*!*******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./components/header/header.module.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************/
+.header_container__de_HE {
+  margin: 0 auto;
+  max-width: 1340px;
+  width: 100%;
+} 
+
+.header_line__tJN_B {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_logo__zlk1H {
+  cursor: pointer;
+}
+
+.header_search__ACmLc {
+  display: flex;
+}
+
+.header_search__ACmLc input{
+  background-color: var(--light);
+  height: 45px;
+  width: 550px;
+  border-radius: 7px 0px 0px 7px;
+  padding: 0 15px;
+  font-weight: 500;
+}
+
+.header_search__ACmLc button{
+  background-color: var(--accent);
+  border-radius: 0px 7px 7px 0px;
+  height: 45px;
+  width: 50px;
+}
+
+.header_icons__hTKB8 {
+  display: flex;
+  gap: 30px;
+}
+
+.header_icons__hTKB8 button {
+  width: 45px;
+  height: 45px;
+  transition: background-color 0.2s ease;
+  border-radius: 6px;
+}
+
+.header_icons__hTKB8 button:hover {
+  background-color: var(--grey);
+}
+/*!***************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./app/home.module.css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************/
+.home_main__ZqXmQ {
+  display: flex;
+  padding-top: 50px;
+  margin: 0 auto;
+  max-width: 1340px;
+  width: 100%;
+}
+
+.home_products__Y1BVQ {
+  flex-grow: 1;
+  padding-left: 25px;
+}

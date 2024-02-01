@@ -1,0 +1,12 @@
+.main {
+  display: flex;
+  padding-top: 50px;
+  margin: 0 auto;
+  max-width: 1340px;
+  width: 100%;
+}
+
+.products {
+  flex-grow: 1;
+  padding-left: 25px;
+}

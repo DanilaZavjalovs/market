@@ -1,0 +1,36 @@
+:root {
+  --dark: #1E1E1E;
+  --light: #fff;
+  --bg: #F8F8F8;
+  --accent: #3CA674;
+  --grey: #4F4F4F;
+}
+
+header {
+  background-color: var(--dark);
+  padding: 25px 0;
+}
+
+body {
+  background-color: var(--bg);
+}
+
+p {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+h4 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 600;
+}

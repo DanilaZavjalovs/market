@@ -1,0 +1,65 @@
+/*!**********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./components/product/products.module.css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************/
+.products_products__Eexue {
+  display: grid;
+}
+
+.products_product__IWr_O {
+  background-color: var(--light);
+  width: 240px;
+  height: 350px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.products_img__9zjYP {
+  object-fit: contain;
+  border-radius: 15px 15px 0px 0px;
+}
+
+.products_text__5x3e9 {
+  padding: 15px;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  height: 130px;
+  padding-bottom: 0;
+}
+
+.products_bottom__tqfZT {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.products_buttons__7i9nt {
+  display: flex;
+  justify-content: space-between;
+}
+
+.products_buy__DKdD3 {
+  background-color: var(--accent);
+  height: 35px;
+  width: 150px;
+  border-radius: 20px;
+  font-weight: 500;
+  color: var(--light);
+}
+
+/*!****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./app/(categories)/page.module.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************/
+.page_main__B9Sqr {
+  display: flex;
+  padding-top: 50px;
+  margin: 0 auto;
+  max-width: 1340px;
+  width: 100%;
+}
+
+.page_products__0kpFg {
+  flex-grow: 1;
+  padding-left: 25px;
+}
