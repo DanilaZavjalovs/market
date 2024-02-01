@@ -22,13 +22,13 @@ public class DataLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        //for (CategoryDto dto: dtoList()) {
-        //    categoryService.saveCategory(dto);
-        //}
+        for (CategoryDto dto: dtoList()) {
+            categoryService.saveCategory(dto);
+        }
 
-        //for (ProductDto dto: productDtos()) {
-        //    productService.saveProduct(dto);
-        //}
+        for (ProductDto dto: productDtos()) {
+            productService.saveProduct(dto);
+        }
     }
 
     private List<CategoryDto> dtoList() {
@@ -60,7 +60,7 @@ public class DataLoader implements CommandLineRunner {
     private List<ProductDto> productDtos() {
         List<ProductDto> productDtos = new ArrayList<>();
 
-        List<CategoryDto> categoryDtos = dtoList();
+        List<CategoryDto> categoryDtos = categoryService.getCategories();
 
         ProductDto dto1 = new ProductDto();
         dto1.setName("Stylish T-Shirt");
