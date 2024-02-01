@@ -28,7 +28,7 @@ public class ImageService {
         ImageEntity imageEntity = new ImageEntity();
         imageEntity.setName(file.getOriginalFilename());
         imageEntity.setFilePath(FOLDER_PATH + file.getOriginalFilename());
-        imageEntity.setProduct(productEntity);
+        imageEntity.setProductId(productEntity);
 
 
         imageRepository.save(imageEntity);

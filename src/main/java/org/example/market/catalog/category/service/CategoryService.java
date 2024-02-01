@@ -7,6 +7,7 @@ import org.example.market.catalog.category.repository.CategoryRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -22,5 +23,9 @@ public class CategoryService {
 
     public void saveCategory(CategoryDto dto) {
         categoryRepository.save(categoryMapper.DtoToEntity(dto));
+    }
+
+    public void deleteCategory(UUID categoryId) {
+        categoryRepository.deleteById(categoryId);
     }
 }

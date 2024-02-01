@@ -1,7 +1,6 @@
 package org.example.market.catalog.product.dto;
 
 import lombok.Data;
-
 import java.util.UUID;
 
 @Data

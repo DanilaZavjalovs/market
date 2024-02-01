@@ -2,6 +2,7 @@ package org.example.market.catalog.product.image.controller;
 
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import org.example.market.catalog.product.dto.ProductDto;
 import org.example.market.catalog.product.image.service.ImageService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.UUID;
 
 @RestController

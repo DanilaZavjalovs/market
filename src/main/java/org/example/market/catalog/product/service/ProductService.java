@@ -29,7 +29,18 @@ public class ProductService {
         return list;
     }
 
+    public List<ProductDto> getAllProducts() {
+        List<ProductDto> list = productRepository.findAll().stream()
+                .map(productMapper::EntityToDto).toList();
+
+        return list;
+    }
+
     public void saveProduct(ProductRequest request) {
         productRepository.save(productMapper.RequestToEntity(request));
+    }
+
+    public void saveProduct(ProductDto dto) {
+        productRepository.save(productMapper.DtoToEntity(dto));
     }
 }
