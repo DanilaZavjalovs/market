@@ -4,7 +4,7 @@ import Link from "next/link";
 
 type Category = {
   name: string;
-  categoryId: string;
+  id: string;
 };
 
 export default function Filters() {
@@ -31,7 +31,7 @@ export default function Filters() {
           <h4>Categories</h4>
           <ul className={styles.categories__list}>
             {categories.map((el) => (
-              <Link href={`/${el.name}`} key={el.categoryId}>
+              <Link href={`/${el.id}`} key={el.id}>
                 {el.name.charAt(0).toUpperCase() + el.name.slice(1)}
               </Link>
             ))}

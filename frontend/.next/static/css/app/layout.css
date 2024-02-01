@@ -1,3 +1,57 @@
+/*!*******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./components/header/header.module.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************/
+.header_container__de_HE {
+  margin: 0 auto;
+  max-width: 1340px;
+  width: 100%;
+} 
+
+.header_line__tJN_B {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_logo__zlk1H {
+  cursor: pointer;
+}
+
+.header_search__ACmLc {
+  display: flex;
+}
+
+.header_search__ACmLc input{
+  background-color: var(--light);
+  height: 45px;
+  width: 550px;
+  border-radius: 7px 0px 0px 7px;
+  padding: 0 15px;
+  font-weight: 500;
+}
+
+.header_search__ACmLc button{
+  background-color: var(--accent);
+  border-radius: 0px 7px 7px 0px;
+  height: 45px;
+  width: 50px;
+}
+
+.header_icons__hTKB8 {
+  display: flex;
+  gap: 30px;
+}
+
+.header_icons__hTKB8 button {
+  width: 45px;
+  height: 45px;
+  transition: background-color 0.2s ease;
+  border-radius: 6px;
+}
+
+.header_icons__hTKB8 button:hover {
+  background-color: var(--grey);
+}
 /*!***************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./components/loginModal/loginModal.module.css ***!
   \***************************************************************************************************************************************************************************************************************************************************************************************/

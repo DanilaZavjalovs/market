@@ -17,12 +17,12 @@ export default function Home() {
     {
       name: "No category",
       categoryId: "1",
+      id: "1321",
     },
   ])
 
   return (
     <>
-      <Header />
       <main className={styles.main}>
         <Filters />
         <div className={styles.products}>

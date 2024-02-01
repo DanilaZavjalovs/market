@@ -1,0 +1,95 @@
+.main {
+  margin: 0 auto;
+  max-width: 1340px;
+  width: 100%;
+  display: flex;
+  padding-top: 50px;
+  height: 610px;
+  justify-content: space-between;
+}
+
+.left__side {
+  width: 782px;
+  height: 100%;
+  background-color: var(--light);
+  border-radius: 10px;
+}
+
+.right__side {
+  display: flex;
+  width: 538px;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title {
+  height: 290px;
+  width: 100%;
+  background-color: var(--light);
+  border-radius: 10px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.description {
+  height: 250px;
+  width: 100%;
+  background-color: var(--light);
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.seller {
+  margin-top: 10px;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.price {
+  font-size: 26px;
+  font-weight: 500;
+}
+
+.title__bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.add__button {
+  background-color: var(--accent);
+  width: 170px;
+  height: 45px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--light);
+  border-radius: 5px;
+}
+
+.fav__button {
+  background: none;
+  border: 2px solid var(--accent);
+  width: 170px;
+  height: 45px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--accent);
+  border-radius: 5px;
+}
+
+.id {
+  color: var(--grey);
+}
+
+.description__text {
+  color: var(--grey);
+  margin-top: 10px;
+}

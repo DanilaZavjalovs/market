@@ -23,6 +23,7 @@ export default function RootLayout({
       <body className={montserrat.className}>
         <RegisterModal />
         <LoginModal />
+        <Header />
         {children}
       </body>
     </html>

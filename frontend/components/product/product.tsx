@@ -1,9 +1,11 @@
 import styles from "./products.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 export type Product = {
-  name: string;
-  categoryId: string;
+  name: string,
+  id: string,
+  categoryId: string,
 };
 
 interface ProductsProps {
@@ -17,7 +19,7 @@ export default function Products({ products }: ProductsProps) {
         <div className={styles.product} key={index}>
           <Image src="" alt="Image" width={240} height={190} />
           <div className={styles.text}>
-            <p>{item.name}</p>
+            <Link href={`/${item.id}`}>{item.name}</Link>
             <span className={styles.bottom}>
               <h4>$50</h4>
               <span className={styles.buttons}>
