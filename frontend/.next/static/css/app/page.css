@@ -3,6 +3,9 @@
   \**********************************************************************************************************************************************************************************************************************************************************************************/
 .products_products__Eexue {
   display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px 20px;
+  gap: 20px 20px;
 }
 
 .products_product__IWr_O {
@@ -48,13 +51,17 @@
   color: var(--light);
 }
 
+.products_name__jMc68 {
+  font-weight: 500;
+  color: var(--dark)
+}
+
 /*!*********************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./components/filters/filters.module.css ***!
   \*********************************************************************************************************************************************************************************************************************************************************************************/
 .filters_aside__MnSXF {
   background-color: var(--light);
-  max-width: 350px;
-  width: 100%;
+  width: 300px;
   height: 1200px;
   border-radius: 15px;
 }
@@ -66,8 +73,13 @@
   gap: 30px;
 }
 
+.filters_categories__15nOS {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
 .filters_categories__list__WuRPA {
-  margin-top: 25px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -88,6 +100,37 @@
 .filters_link__8cLwa {
   color: var(--grey)
 }
+
+.filters_price__G_gz5 {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.filters_price__list__NP7T_ {
+  display: flex;
+  gap: 10px;
+}
+
+.filters_price__list__NP7T_ input {
+  background-color: var(--bg);
+  height: 40px;
+  width: 85px;
+  font-size: 16px;
+  padding-left: 10px;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.filters_price__list__NP7T_ button {
+  border: 2px solid var(--accent);
+  height: 40px;
+  font-size: 16px;
+  width: 100%;
+  font-weight: 500;
+  color: var(--accent);
+  border-radius: 5px;
+}
 /*!***************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./app/home.module.css ***!
   \***************************************************************************************************************************************************************************************************************************************************************/
@@ -101,5 +144,5 @@
 
 .home_products__Y1BVQ {
   flex-grow: 1;
-  padding-left: 25px;
+  padding-left: 20px;
 }

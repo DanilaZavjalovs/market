@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./filters.module.css";
 import Link from "next/link";
+import { useSearchParams, useRouter, usePathname } from "next/navigation";
 
 type Category = {
   name: string;
@@ -9,6 +10,23 @@ type Category = {
 
 export default function Filters() {
   const [categories, setCategories] = useState<Category[]>([]);
+
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const { replace } = useRouter();
+
+  const [minPriceValue, setMinPriceValue] = useState("");
+  const [maxPriceValue, setMaxPriceValue] = useState("");
+
+  const handleChangeMin = (event: any) => {
+    setMinPriceValue(event.target.value)
+  }
+
+  const handleChangeMax = (event: any) => {
+    setMaxPriceValue(event.target.value)
+  }
+
+  let params = new URLSearchParams(searchParams);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,6 +42,25 @@ export default function Filters() {
     fetchData();
   }, []);
 
+  const handleFilter = (event: any) => {
+    event.preventDefault();
+    params = new URLSearchParams(searchParams);
+    params.delete("query");
+    params.delete("min");
+    params.delete("max");
+
+
+    if (minPriceValue) {
+      params.append("min", minPriceValue);
+    }
+
+    if (maxPriceValue) {
+      params.append("max", maxPriceValue);
+    }
+
+    replace(`${pathname}?${params.toString()}`);
+  }
+
   return (
     <aside className={styles.aside}>
       <div className={styles.content}>
@@ -36,6 +73,14 @@ export default function Filters() {
               </Link>
             ))}
           </ul>
+        </div>
+        <div className={styles.price}>
+          <h4>Price</h4>
+          <form className={styles.price__list} onSubmit={handleFilter}>
+              <input type="number" placeholder="Min $" value={minPriceValue} onChange={handleChangeMin} />
+              <input type="number" placeholder="Max $" value={maxPriceValue} onChange={handleChangeMax} />
+              <button type="submit">Ok</button>
+          </form>
         </div>
       </div>
     </aside>

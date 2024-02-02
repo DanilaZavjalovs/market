@@ -19,5 +19,5 @@ public class ImageEntity {
 
     @ManyToOne
     @JoinColumn(name = "productId")
-    private ProductEntity product;
+    private ProductEntity productId;
 }

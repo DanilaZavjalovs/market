@@ -2,7 +2,15 @@ package org.example.market;
 
 import lombok.RequiredArgsConstructor;
 import org.example.market.catalog.category.dto.CategoryDto;
+import org.example.market.catalog.category.mapper.CategoryMapper;
 import org.example.market.catalog.category.service.CategoryService;
+import org.example.market.catalog.product.dto.ProductDto;
+import org.example.market.catalog.product.entity.ProductEntity;
+import org.example.market.catalog.product.image.entity.ImageEntity;
+import org.example.market.catalog.product.image.repository.ImageRepository;
+import org.example.market.catalog.product.image.service.ImageService;
+import org.example.market.catalog.product.mapper.ProductMapper;
+import org.example.market.catalog.product.service.ProductService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -14,12 +22,22 @@ import java.util.List;
 public class DataLoader implements CommandLineRunner {
 
     private final CategoryService categoryService;
+    private final ProductService productService;
+    private final CategoryMapper categoryMapper;
+    private final ProductMapper productMapper;
+    private final ImageRepository imageRepository;
 
     @Override
     public void run(String... args) throws Exception {
-        // for (CategoryDto dto: dtoList()) {
-        //    categoryService.saveCategory(dto);
-        // }
+        for (CategoryDto dto: dtoList()) {
+            categoryService.saveCategory(dto);
+        }
+
+        for (ProductDto dto: productDtos()) {
+           productService.saveProduct(dto);
+        }
+
+        imageEntities();
     }
 
     private List<CategoryDto> dtoList() {
@@ -46,5 +64,105 @@ public class DataLoader implements CommandLineRunner {
         dtos.add(dto6);
 
         return dtos;
+    }
+
+    private List<ProductDto> productDtos() {
+        List<ProductDto> productDtos = new ArrayList<>();
+
+        List<CategoryDto> categoryDtos = categoryService.getCategories();
+
+        ProductDto dto1 = new ProductDto();
+        dto1.setName("Stylish T-Shirt");
+        dto1.setDescription("Comfortable cotton t-shirt with a trendy design.");
+        dto1.setPrice(25);
+        dto1.setCategoryId(categoryMapper.DtoToEntity(categoryDtos.get(0)));
+
+        ProductDto dto2 = new ProductDto();
+        dto2.setName("Running Shoes");
+        dto2.setDescription("High-performance running shoes with cushioned soles.");
+        dto2.setPrice(60);
+        dto2.setCategoryId(categoryMapper.DtoToEntity(categoryDtos.get(1)));
+
+        ProductDto dto3 = new ProductDto();
+        dto3.setName("Smartphone");
+        dto3.setDescription("Latest model with advanced features and high-resolution camera.");
+        dto3.setPrice(500);
+        dto3.setCategoryId(categoryMapper.DtoToEntity(categoryDtos.get(2)));
+
+        ProductDto dto4 = new ProductDto();
+        dto4.setName("Bamboo Bed Sheets");
+        dto4.setDescription("Luxurious and eco-friendly bamboo sheets for a comfortable sleep.");
+        dto4.setPrice(80);
+        dto4.setCategoryId(categoryMapper.DtoToEntity(categoryDtos.get(3)));
+
+        ProductDto dto5 = new ProductDto();
+        dto5.setName("Skincare Set");
+        dto5.setDescription("Complete skincare set with cleanser, toner, and moisturizer.");
+        dto5.setPrice(50);
+        dto5.setCategoryId(categoryMapper.DtoToEntity(categoryDtos.get(4)));
+
+        ProductDto dto6 = new ProductDto();
+        dto6.setName("Hiking Backpack");
+        dto6.setDescription("Durable backpack with multiple compartments for hiking and outdoor activities.");
+        dto6.setPrice(70);
+        dto6.setCategoryId(categoryMapper.DtoToEntity(categoryDtos.get(5)));
+
+        productDtos.add(dto1);
+        productDtos.add(dto2);
+        productDtos.add(dto3);
+        productDtos.add(dto4);
+        productDtos.add(dto5);
+        productDtos.add(dto6);
+
+        return productDtos;
+    }
+
+    private void imageEntities() {
+        List<ProductEntity> productEntities = productService.getAllProducts().stream()
+                .map(productMapper::DtoToEntity).toList();
+
+        ImageEntity entity1 = new ImageEntity();
+        entity1.setName("T-shirt");
+        entity1.setFilePath("/src/main/resources/image/T-Shirt.png");
+        entity1.setProductId(productEntities.get(0));
+        imageRepository.saveAndFlush(entity1);
+        productEntities.get(0).addImage(entity1);
+
+        ImageEntity entity2 = new ImageEntity();
+        entity2.setName("Shoes");
+        entity2.setFilePath("/src/main/resources/image/Shoes.png");
+        entity2.setProductId(productEntities.get(1));
+        imageRepository.saveAndFlush(entity2);
+        productEntities.get(1).addImage(entity2);
+
+        ImageEntity entity3 = new ImageEntity();
+        entity3.setName("Smartphone");
+        entity3.setFilePath("/src/main/resources/image/Smartphone.png");
+        entity3.setProductId(productEntities.get(2));
+        imageRepository.saveAndFlush(entity3);
+        productEntities.get(2).addImage(entity3);
+
+        ImageEntity entity4 = new ImageEntity();
+        entity4.setName("Bed");
+        entity4.setFilePath("/src/main/resources/image/Bed.png");
+        entity4.setProductId(productEntities.get(3));
+        imageRepository.saveAndFlush(entity4);
+        productEntities.get(3).addImage(entity4);
+
+
+        ImageEntity entity5 = new ImageEntity();
+        entity5.setName("Skincare");
+        entity5.setFilePath("/src/main/resources/image/Skincare.png");
+        entity5.setProductId(productEntities.get(4));
+        imageRepository.saveAndFlush(entity5);
+        productEntities.get(4).addImage(entity5);
+
+
+        ImageEntity entity6 = new ImageEntity();
+        entity6.setName("Backpack");
+        entity6.setFilePath("/src/main/resources/image/Backpack.png");
+        entity6.setProductId(productEntities.get(5));
+        imageRepository.saveAndFlush(entity6);
+        productEntities.get(5).addImage(entity6);
     }
 }
